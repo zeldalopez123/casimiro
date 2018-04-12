@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+class Menu{
+	public static int Mayusculas(String cadena){
+		int numero = 0;
+		for (int i = 0;i<cadena.length();i++) {
+			if ((cadena.charAt(i) >= 65) && (cadena.charAt(i) <= 90)) {
+				numero++;
+			}
+		}
+		return numero;
+	}
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		int opcion;
+		System.out.println("1)Conteo de caracteres");
+		System.out.println("2)Imprimir en mayusculas una palabra");
+		System.out.println("3)Invertir una cadena de caracter");
+		System.out.println("4)Contar cuantas mayusculas tiene una palabra");
+		System.out.println("Ingresa la opcion: ");
+		opcion = entrada.nextInt();
+		if (opcion == 1) {
+			Scanner en = new Scanner(System.in);
+			String cadena = new String();
+			System.out.println("Ingresa un cadena de texto: ");
+			cadena = en.nextLine();
+			int longitud = cadena.length();
+			System.out.println("La cadena tiene " + longitud + " caracteres");        
+		}
+		else if (opcion == 2) {
+			Scanner en = new Scanner(System.in);
+			String cadena = new String();
+			System.out.println("Ingresa la cadena: "); 
+			cadena = en.nextLine();
+			System.out.println(cadena.toUpperCase());
+		}
+		else if (opcion == 3) {
+			Scanner s =new Scanner(System.in);
+        	String palabra;
+        	String palabrainvertida="";
+        	System.out.println("Ingresa una palabra y se mostrara a la inversa:\n");
+        	palabra = s.nextLine();
+ 
+        	for (int i = palabra.length()-1; i>=0; i--){
+            	palabrainvertida += palabra.charAt(i);
+        	}
+ 
+        	System.out.println("La palabra invertida es:\n"+ palabrainvertida);
+		}
+		else if (opcion == 4) {
+			Scanner en = new Scanner(System.in);
+			String cadena = new String();
+			System.out.println("Ingresa la cadena: ");
+			cadena=en.nextLine();
+			System.out.println("El numero de mayusculas de la cadena es: " + Mayusculas(cadena));
+
+		}              
+	}                  
+}
